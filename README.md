@@ -1,6 +1,6 @@
 # CartoonLens
 
-## 1. 과제 목표
+## 1. 프로그램 목표
 
 OpenCV 기반 이미지 처리 기법을 사용하여 입력 이미지를 만화 스타일(cartoon style)로 변환한다.
 
