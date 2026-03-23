@@ -1,4 +1,4 @@
-# Homework #2 - Cartoon Rendering
+# CartoonLens
 
 ## 1. 과제 목표
 
