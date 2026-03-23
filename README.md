@@ -19,21 +19,29 @@ OpenCV 기반 이미지 처리 기법을 사용하여 입력 이미지를 만화
 ### 만화 스타일 변환 실행
 
 ```bash
-python3 cartoon_render.py <입력이미지경로> <출력이미지경로>
+chmod +x scripts/run_good.sh scripts/run_bad.sh scripts/run_me.sh
 ```
 
-예시:
+각 이미지 실행:
 
 ```bash
-python3 cartoon_render.py images/input/good_input.png results/my_cartoon.png
+./scripts/run_good.sh
+```
+
+```bash
+./scripts/run_bad.sh
+```
+
+```bash
+./scripts/run_me.sh
 ```
 
 기본 실행 시 원본 이미지와 만화 변환 결과가 하나의 OpenCV 창에서 가로로 이어진 비교 화면으로 표시된다. 이미 같은 출력 파일이 존재하면 덮어쓰지 않고 기존 결과 이미지를 다시 보여준다.
 
-UI 창 없이 실행만 하고 싶다면 아래처럼 `--no-ui` 옵션을 사용할 수 있다.
+UI 창 없이 실행만 하고 싶다면 아래처럼 스크립트 뒤에 `--no-ui` 옵션을 붙여 사용할 수 있다.
 
 ```bash
-python3 cartoon_render.py images/input/Me.jpg images/output/me_cartoon.png --no-ui
+./scripts/run_me.sh --no-ui
 ```
 
 ### README 데모 이미지 재생성
@@ -48,14 +56,14 @@ python3 generate_demo_assets.py
 
 입력 이미지:
 
-![Good Input](images/input/good_input.png)
+![Good Input](images/input/house.jpg)
 
 출력 이미지:
 
-![Good Output](images/output/good_output.png)
+![Good Output](images/output/house_cartoon.png)
 
 설명:
-영역이 비교적 단순하고, 색상 경계가 분명하며, 물체의 윤곽이 또렷한 이미지에서는 만화 스타일이 잘 드러난다. 하늘, 집, 나무처럼 큰 색 영역으로 나뉜 장면은 bilateral filtering과 color quantization의 효과가 잘 나타난다.
+집 외벽, 창문, 지붕, 하늘처럼 큰 색 영역과 뚜렷한 경계가 있는 장면은 만화 스타일로 변환했을 때 효과가 잘 나타난다. 건물 구조가 분명해서 윤곽선 검출이 안정적이고, 색상 양자화 이후에도 형태가 자연스럽게 유지된다.
 
 ### 4.2 만화 느낌이 잘 표현되지 않는 경우
 
